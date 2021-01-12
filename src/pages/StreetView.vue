@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script lang="js">
+<script>
 setInterval(function() {
     if( document.getElementsByClassName('dismissButton').length ) {
         for( dismissBtn of document.getElementsByClassName('dismissButton') ) {
