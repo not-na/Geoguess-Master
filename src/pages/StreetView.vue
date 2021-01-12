@@ -44,6 +44,28 @@
   </div>
 </template>
 
+<script lang="js">
+setInterval(function() {
+    if( document.getElementsByClassName('dismissButton').length ) {
+        for( dismissBtn of document.getElementsByClassName('dismissButton') ) {
+            dismissBtn.click()
+        }
+    }
+
+
+    divsB = document.querySelectorAll("div")
+    myDiv = [...divsB].filter(e => e.innerText == "For development purposes only");
+        for( dd of myDiv ) {
+            dd.style.zIndex = '-1'
+        }
+
+
+    for( inv of document.getElementsByClassName('widget-scene-canvas') ) {
+        inv.parentElement.parentElement.parentElement.style.mixBlendMode = 'difference'
+    }
+}, 1000)
+</script>
+
 <script lang="ts">
 import { defineComponent, reactive, onMounted, } from '@vue/composition-api'
 
